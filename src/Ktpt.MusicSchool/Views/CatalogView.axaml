@@ -1,0 +1,43 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Ktpt.MusicSchool.Views.CatalogView">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Spacing="10" Margin="0,0,0,20">
+            <TextBlock Text="Каталог музыкальных занятий" FontSize="22" />
+            
+            <Grid ColumnDefinitions="*,200,Auto">
+                <TextBox x:Name="SearchBox" PlaceholderText="Поиск по названию" TextChanged="SearchChanged" />
+                
+                <ComboBox x:Name="SortBox" Grid.Column="1" HorizontalAlignment="Stretch" SelectionChanged="FilterChanged" Margin="10,0">
+                    <ComboBoxItem Content="Цена по возрастанию" />
+                    <ComboBoxItem Content="Цена по убыванию" />
+                </ComboBox>
+                
+                <Button Grid.Column="2" Content="Обновить" Click="ReloadClick" />
+            </Grid>
+            
+            <TextBlock x:Name="CountText" Foreground="#666" />
+        </StackPanel>
+
+        <ListBox x:Name="CardsList" SelectionChanged="CardSelected" Background="Transparent">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border Background="{Binding Background}" BorderBrush="#DDD" BorderThickness="1" Padding="15" Margin="0,0,0,8" CornerRadius="5">
+                        <Grid ColumnDefinitions="150,*,150">
+                            <Image Source="{Binding Image}" Width="140" Height="120" Stretch="UniformToFill" />
+                            
+                            <StackPanel Grid.Column="1" Spacing="5" Margin="15,0">
+                                <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="18"/>
+                                <TextBlock Text="{Binding Category}" Foreground="#555"/>
+                                <TextBlock Text="{Binding SeatsText}" FontWeight="SemiBold"/>
+                                <TextBlock Text="{Binding Content}" TextWrapping="Wrap" Foreground="#333"/>
+                            </StackPanel>
+                            
+                            <TextBlock Grid.Column="2" Text="{Binding PriceText}" FontWeight="Bold" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </DockPanel>
+</UserControl>

@@ -1,0 +1,32 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Ktpt.MusicSchool.App"
+             RequestedThemeVariant="Light">
+    <Application.Resources>
+        <SolidColorBrush x:Key="SurfaceBrush" Color="#F0F0F0" />
+        <SolidColorBrush x:Key="AccentBrush" Color="#C62828" />
+        <SolidColorBrush x:Key="LowStockBrush" Color="#FFCCCC" />
+        <SolidColorBrush x:Key="NormalBrush" Color="#FFFFFF" />
+    </Application.Resources>
+    
+    <Application.Styles>
+        <FluentTheme />
+        <Style Selector="Window">
+            <Setter Property="FontFamily" Value="Calibri" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Background" Value="{StaticResource NormalBrush}" />
+        </Style>
+        <Style Selector="Button">
+            <Setter Property="Padding" Value="12,8" />
+            <Setter Property="Margin" Value="3" />
+        </Style>
+        <Style Selector="Button.accent">
+            <Setter Property="Background" Value="{StaticResource AccentBrush}" />
+            <Setter Property="Foreground" Value="White" />
+        </Style>
+        <Style Selector="TextBox.heading">
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+    </Application.Styles>
+</Application>

@@ -1,0 +1,35 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Ktpt.MusicSchool.Views.MainWindow"
+        Title="Музыкальная Школа" Width="1120" Height="760"
+        MinWidth="850" MinHeight="600"
+        Background="#F4F4F4">
+    
+    <DockPanel>
+        <Border DockPanel.Dock="Top" Padding="16" Background="#FFFFFF" BorderBrush="#DDD" BorderThickness="0,0,0,1">
+            <Grid ColumnDefinitions="Auto,*,Auto">
+                <StackPanel Orientation="Horizontal" Spacing="16">
+                    <TextBlock Text="🎵" FontSize="40" VerticalAlignment="Center"/>
+                    <TextBlock Text="Музыкальная Школа" FontSize="26" FontWeight="Bold" VerticalAlignment="Center"/>
+                </StackPanel>
+                
+                <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="8" Margin="40,0,0,0" VerticalAlignment="Center">
+                    <Button x:Name="CatalogButton" Content="Каталог" Click="CatalogClick" Background="#D0D0D0" />
+                    <Button x:Name="OrdersButton" Content="Заказы" Click="OrdersClick" Background="#D0D0D0" IsVisible="False" />
+                    <Button x:Name="AdminButton" Content="Управление" Click="AdminClick" Background="#D0D0D0" IsVisible="False" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="12" VerticalAlignment="Center">
+                    <TextBlock x:Name="UserText" Text="Гость" FontSize="20" FontWeight="Bold"/>
+                    <Button Content="Сменить пользователя" Click="LogoutClick" Background="#D0D0D0" />
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Border DockPanel.Dock="Top" Background="#FFEBEB" Padding="16,8" IsVisible="False" x:Name="MessageBorder">
+            <TextBlock x:Name="MessageText" Foreground="#C62828" FontWeight="Bold"/>
+        </Border>
+
+        <ContentControl x:Name="PageHost" />
+    </DockPanel>
+</Window>

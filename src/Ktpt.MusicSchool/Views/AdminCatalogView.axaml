@@ -1,0 +1,29 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Ktpt.MusicSchool.Views.AdminCatalogView">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Spacing="10" Margin="0,0,0,15">
+            <TextBlock Text="Управление каталогом (Цены)" FontSize="22" FontWeight="Bold"/>
+            <Button Content="Обновить" Click="ReloadClick" HorizontalAlignment="Left"/>
+        </StackPanel>
+
+        <ListBox x:Name="LessonsList">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="#DDD" BorderThickness="1" Padding="10" Margin="0,0,0,5">
+                        <Grid ColumnDefinitions="*,150,150">
+                            <StackPanel>
+                                <TextBlock Text="{Binding Title}" FontWeight="Bold" FontSize="16"/>
+                                <TextBlock Text="{Binding Category.CategoryName}" Foreground="#666"/>
+                            </StackPanel>
+                            
+                            <TextBox Grid.Column="1" x:Name="PriceBox" Text="{Binding BasePrice}" Width="100" Margin="5" HorizontalAlignment="Left"/>
+                            
+                            <Button Grid.Column="2" Content="Сохранить цену" Tag="{Binding}" Click="SavePriceClick" Background="#D0D0D0"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </DockPanel>
+</UserControl>

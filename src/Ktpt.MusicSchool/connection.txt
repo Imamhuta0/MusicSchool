@@ -1,0 +1,1 @@
+﻿Server=L-KAB23-12;Database=MusicSchoolDB;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;Connect Timeout=5

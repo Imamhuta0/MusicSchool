@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace Ktpt.MusicSchool.Models;
+
+public partial class User
+{
+    public int UserId { get; set; }
+
+    public int RoleId { get; set; }
+
+    public string Login { get; set; } = null!;
+
+    public string PasswordHash { get; set; } = null!;
+
+    public string LastName { get; set; } = null!;
+
+    public string FirstName { get; set; } = null!;
+
+    public string? MiddleName { get; set; }
+
+    public virtual ICollection<LessonVariant> LessonVariants { get; set; } = new List<LessonVariant>();
+
+    public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
+
+    public virtual Role Role { get; set; } = null!;
+}

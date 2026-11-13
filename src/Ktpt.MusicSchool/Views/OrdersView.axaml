@@ -1,0 +1,14 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Ktpt.MusicSchool.Views.OrdersView">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Spacing="10" Margin="0,0,0,15">
+            <TextBlock Text="Список заказов" FontSize="22" FontWeight="Bold"/>
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <Button Content="Состав заказа" Classes="accent" Click="OpenClick"/>
+                <Button Content="Обновить" Click="ReloadClick"/>
+            </StackPanel>
+        </StackPanel>
+        <ListBox x:Name="OrdersList"/>
+    </DockPanel>
+</UserControl>
